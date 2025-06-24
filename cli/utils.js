@@ -58,7 +58,7 @@ export function formatDate(timestamp) {
 
     const timePart = new Intl.DateTimeFormat("en-US", timeOptions).format(date);
 
-    return `${datePart} ${timePart} UTC`;
+    return `${datePart} ${timePart}`;
 }
 
 /**

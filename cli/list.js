@@ -72,13 +72,13 @@ function createTable(plans) {
             colorize(event.status, event.usr),
             colorize(event.status, event.tag),
             colorize(event.status, event.fax),
-            colorize(event.status, formatDate(event.eta)),
+            colorize(event.status, `${event.eta} ${formatDate(event.eta)}`),
             colorize(event.status),
         ]);
 
     data.unshift(
-        ["GUY", "HASH", "USR", "TAG", "FAX", "ETA", "STATUS"].map((item) =>
-            chalk.bold.cyan(item),
+        ["GUY", "HASH", "USR", "TAG", "FAX", "ETA (UTC)", "STATUS"].map(
+            (item) => chalk.bold.cyan(item),
         ),
     );
 
@@ -89,7 +89,7 @@ function createTable(plans) {
             2: { width: 21, wrapWord: true },
             3: { width: 33, wrapWord: true },
             4: { width: 10, wrapWord: true },
-            5: { width: 10, wrapWord: true },
+            5: { width: 16, wrapWord: true },
             6: { width: 10, wrapWord: true },
         },
     });
