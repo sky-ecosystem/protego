@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import { table } from "table";
 import { fetchPausePlans } from "./fetchPausePlans.js";
 import defaults from "./defaults.js";
-import { ttyOnlySpinner, createJson, formatDate } from "./utils.js";
+import { ttyOnlySpinner, createJson, formatDate, formatHex } from "./utils.js";
 
 /**
  * Runs the CLI list command
@@ -67,10 +67,10 @@ function createTable(plans) {
             return etaB > etaA ? 1 : etaB < etaA ? -1 : 0;
         })
         .map((event) => [
-            colorize(event.status, event.guy),
-            colorize(event.status, event.hash),
-            colorize(event.status, event.usr),
-            colorize(event.status, event.tag),
+            colorize(event.status, formatHex(event.guy, 6, 6)),
+            colorize(event.status, formatHex(event.hash, 6, 6)),
+            colorize(event.status, formatHex(event.usr, 6, 6)),
+            colorize(event.status, formatHex(event.tag, 6, 6)),
             colorize(event.status, event.fax),
             colorize(event.status, `${event.eta} ${formatDate(event.eta)}`),
             colorize(event.status),
@@ -84,12 +84,12 @@ function createTable(plans) {
 
     return table(data, {
         columns: {
-            0: { width: 21, wrapWord: true },
-            1: { width: 33, wrapWord: true },
-            2: { width: 21, wrapWord: true },
-            3: { width: 33, wrapWord: true },
+            0: { width: 17, wrapWord: true },
+            1: { width: 17, wrapWord: true },
+            2: { width: 17, wrapWord: true },
+            3: { width: 17, wrapWord: true },
             4: { width: 10, wrapWord: true },
-            5: { width: 16, wrapWord: true },
+            5: { width: 27, wrapWord: true },
             6: { width: 10, wrapWord: true },
         },
     });

@@ -64,16 +64,21 @@ export function formatDate(timestamp) {
 /**
  * Formats hex strings (address, bytes32) into a shorter format including just four initial and final chars
  * @param {string} hex Hex string
+ * @param {number} first Number of chars to display in the beggining of formatted string
+ * @param {number} last Number of chars to display at the end of formatted string
  * @returns {string}
  */
-export function formatHex(string) {
-    if (typeof string !== "string" || !string.startsWith("0x")) {
-        return string;
+export function formatHex(hexStr, first = 4, last = 4) {
+    if (typeof hexStr !== "string" || !hexStr.startsWith("0x")) {
+        return hexStr;
     }
 
-    if (string.length <= 10) {
-        return string;
+    if (first < 0 || last < 0) {
+        return hexStr;
     }
-
-    return `${string.slice(0, 6)}...${string.slice(-4)}`;
+    // Add 2 to account for the 0x prefix
+    if (hexStr.length <= 2 + first + last) {
+        return hexStr;
+    }
+    return `${hexStr.slice(0, 2 + first)}...${hexStr.slice(-last)}`;
 }
