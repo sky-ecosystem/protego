@@ -47,18 +47,19 @@ export function createJson(plans, spaces = 0) {
 export function formatDate(timestamp) {
     const date = new Date(Number(timestamp) * 1000);
 
-    const datePart = date.toISOString().slice(2, 10);
-
-    const timeOptions = {
+    const options = {
+        day: "2-digit",
+        month: "2-digit",
+        year: "2-digit",
         hour: "2-digit",
         minute: "2-digit",
         timeZone: "UTC",
         hour12: false,
     };
 
-    const timePart = new Intl.DateTimeFormat("en-US", timeOptions).format(date);
-
-    return `${datePart} ${timePart}`;
+    return new Intl.DateTimeFormat("en-CA", options)
+        .format(date)
+        .replace(",", "");
 }
 
 /**
