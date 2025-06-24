@@ -72,7 +72,7 @@ function createTable(plans) {
             colorize(event.status, formatHex(event.usr, 6, 6)),
             colorize(event.status, formatHex(event.tag, 6, 6)),
             colorize(event.status, event.fax),
-            colorize(event.status, `${event.eta} ${formatDate(event.eta)}`),
+            colorize(event.status, `${event.eta} (${formatDate(event.eta)})`),
             colorize(event.status),
         ]);
 

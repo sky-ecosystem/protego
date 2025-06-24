@@ -47,7 +47,7 @@ export function createJson(plans, spaces = 0) {
 export function formatDate(timestamp) {
     const date = new Date(Number(timestamp) * 1000);
 
-    const datePart = date.toISOString().slice(0, 10);
+    const datePart = date.toISOString().slice(2, 10);
 
     const timeOptions = {
         hour: "2-digit",
