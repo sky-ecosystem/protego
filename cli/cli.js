@@ -53,7 +53,7 @@ program
     .addCommand(
         new Command("encode")
             .description(
-                "Encode calldata to cancel Spells (Etherscan/Tenderly input)",
+                "Encode calldata to drop spells (i.e: input for Etherscan/Tenderly  UIs)",
             )
             .action(encode),
     );

@@ -25,7 +25,7 @@ Options:
 
 Commands:
   list [options]                   List pending spells by status
-  encode                           Encode calldata to cancel Spells (Etherscan/Tenderly input)
+  encode                           Encode calldata to drop spells (i.e: input for Etherscan/Tenderly  UIs)
   help [command]                   display help for command
 ```
 
