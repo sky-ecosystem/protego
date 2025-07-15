@@ -2,29 +2,9 @@
 
 ## Usage
 
-### CLI Commands
-
-The Protego CLI supports the following commands:
-
-**1. `list` command**
-
-This command lists spells based on the provided filters. It utilizes global options (like `--rpc-url`, `--from-block`, `--pause-address`) for context and has its own specific options (`--status`, `--format`) to control its behavior.
-
-**Usage Examples:**
-
-To list all `PENDING` spells from block `19420069` using default RPC and table format:
-
-```bash
-npx @dewiz-xyz/protego@latest list --status PENDING --from-block 19420069
 ```
-
-To list `ALL` spells from the default block, using a custom RPC URL, and outputting in `JSON` format:
-
-```bash
-npx @dewiz-xyz/protego@latest list --rpc-url <your-custom-rpc-url> --format JSON
+npx @dewiz-xyz/protego@latest [options] [command]
 ```
-
-**Global Options:**
 
 ```
 Usage: Protego CLI [options] [command]
@@ -49,10 +29,31 @@ Commands:
   help [command]                   display help for command
 ```
 
+### CLI Commands
+
+The Protego CLI supports the following commands:
+
+**1. `list` command**
+
+This command lists spells based on the provided filters. It utilizes global options (like `--rpc-url`, `--from-block`, `--pause-address`) for context and has its own specific options (`--status`, `--format`) to control its behavior.
+
+**Usage Examples:**
+
+To list all `PENDING` spells from block `19420069` using default RPC and table format:
+
+```bash
+npx @dewiz-xyz/protego@latest list --status PENDING --from-block 19420069
+```
+
+To list `ALL` spells from the default block, using a custom RPC URL, and outputting in `JSON` format:
+
+```bash
+npx @dewiz-xyz/protego@latest list --rpc-url <your-custom-rpc-url> --format JSON
+```
+
 **Command Options:**
 
 ```
-(Use `node --trace-warnings ...` to show where the warning was created)
 Usage: Protego CLI list [options]
 
 List pending spells by status
