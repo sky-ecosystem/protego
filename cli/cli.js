@@ -3,9 +3,11 @@
 import { Command, Option } from "commander";
 import figlet from "figlet";
 import defaults from "./defaults.js";
-import p from "./package.json" with { type: "json" };
 import { list } from "./list.js";
 import { encode } from "./encode.js";
+import { loadJson } from "./utils.js";
+
+const p = loadJson(import.meta.url, "./package.json");
 
 const program = new Command();
 

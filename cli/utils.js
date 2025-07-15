@@ -1,4 +1,7 @@
 import yoctoSpinner from "yocto-spinner";
+import { fileURLToPath } from "url";
+import { dirname, join } from "path";
+import { readFileSync } from "fs";
 
 /**
  * Creates a spinner that only shows if stdout is a TTY
@@ -82,4 +85,16 @@ export function formatHex(hexStr, first = 4, last = 4) {
         return hexStr;
     }
     return `${hexStr.slice(0, 2 + first)}...${hexStr.slice(-last)}`;
+}
+
+/**
+ * Reads and parses a JSON file relative to the calling module.
+ * @param {string} metaUrl - The `import.meta.url` of the calling module.
+ * @param {string} relativePath - The relative path to the JSON file.
+ * @returns {any} Parsed JSON
+ */
+export function loadJson(metaUrl, relativePath) {
+    const modulePath = dirname(fileURLToPath(metaUrl));
+    const absolutePath = join(modulePath, relativePath);
+    return JSON.parse(readFileSync(absolutePath, "utf-8"));
 }
