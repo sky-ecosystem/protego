@@ -24,7 +24,7 @@ Options:
   -h, --help                       display help for command
 
 Commands:
-  list [options]                   List pending spells by status
+  list [options]                   List spells by status
   encode                           Encode calldata to drop spells (i.e: input for Etherscan/Tenderly  UIs)
   help [command]                   display help for command
 ```

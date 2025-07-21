@@ -37,7 +37,7 @@ program
     .showHelpAfterError()
     .addCommand(
         new Command("list")
-            .description("List pending spells by status")
+            .description("List spells by status")
             .addOption(
                 new Option("-s, --status <status>", "Filter by status")
                     .choices(["PENDING", "DROPPED", "EXECUTED", "ALL"])

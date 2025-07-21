@@ -59,7 +59,7 @@ export async function encode(localOptions, command) {
             .filter((plan) => response.plans.includes(plan.hash))
             .map((plan) => [plan.usr, plan.tag, plan.fax, plan.eta.toString()]);
 
-        console.log("\n Encoded plans:");
+        console.log("\nEncoded plans:");
         console.log(chalk.green(createJson(selectedPlans)));
     } catch (error) {
         spinner.error("Failed!");
