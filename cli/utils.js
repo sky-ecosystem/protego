@@ -43,6 +43,18 @@ export function createJson(plans, spaces = 0) {
 }
 
 /**
+ * Reads and parses a JSON file relative to the calling module.
+ * @param {string} metaUrl - The `import.meta.url` of the calling module.
+ * @param {string} relativePath - The relative path to the JSON file.
+ * @returns {any} Parsed JSON
+ */
+export function loadJson(metaUrl, relativePath) {
+    const modulePath = dirname(fileURLToPath(metaUrl));
+    const absolutePath = join(modulePath, relativePath);
+    return JSON.parse(readFileSync(absolutePath, "utf-8"));
+}
+
+/**
  * Converts a Unix timestamp to human readable date
  * @param {bigint} timestamp Unix timestamp
  * @returns {string}
@@ -85,16 +97,4 @@ export function formatHex(hexStr, first = 4, last = 4) {
         return hexStr;
     }
     return `${hexStr.slice(0, 2 + first)}...${hexStr.slice(-last)}`;
-}
-
-/**
- * Reads and parses a JSON file relative to the calling module.
- * @param {string} metaUrl - The `import.meta.url` of the calling module.
- * @param {string} relativePath - The relative path to the JSON file.
- * @returns {any} Parsed JSON
- */
-export function loadJson(metaUrl, relativePath) {
-    const modulePath = dirname(fileURLToPath(metaUrl));
-    const absolutePath = join(modulePath, relativePath);
-    return JSON.parse(readFileSync(absolutePath, "utf-8"));
 }
