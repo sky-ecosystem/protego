@@ -110,6 +110,6 @@ function colorize(status, text = status) {
         case "EXECUTED":
             return chalk.green(String(text));
         default:
-            return status;
+            return text;
     }
 }
