@@ -3,7 +3,7 @@
 ## Usage
 
 ```
-npx @sky-ecosystem/protego@latest [options] [command]
+npx @skyecosystem/protego@latest [options] [command]
 ```
 
 ```
@@ -42,13 +42,13 @@ This command lists spells based on the provided filters. It utilizes global opti
 To list all `PENDING` spells from block `19420069` using default RPC and table format:
 
 ```bash
-npx @sky-ecosystem/protego@latest list --status PENDING --from-block 19420069
+npx @skyecosystem/protego@latest list --status PENDING --from-block 19420069
 ```
 
 To list `ALL` spells from the default block, using a custom RPC URL, and outputting in `JSON` format:
 
 ```bash
-npx @sky-ecosystem/protego@latest list --rpc-url <your-custom-rpc-url> --format JSON
+npx @skyecosystem/protego@latest list --rpc-url <your-custom-rpc-url> --format JSON
 ```
 
 **Command Options:**
@@ -147,7 +147,7 @@ It fetches all `PENDING` spells based on the global options provided (like `--rp
 **Usage:**
 
 ```bash
-npx @sky-ecosystem/protego@latest encode [global options]
+npx @skyecosystem/protego@latest encode [global options]
 # or when running locally
 node cli encode [global options]
 ```
@@ -200,11 +200,11 @@ This output can be directly used as the `_plans` parameter for the `drop` functi
 ### As a dependency
 
 ```bash
-npm i @sky-ecosystem/protego
+npm i @skyecosystem/protego
 ```
 
 ```javascript
-import { fetchPausePlans } from "@sky-ecosystem/protego";
+import { fetchPausePlans } from "@skyecosystem/protego";
 
 const plans = await fetchPausePlans({
   rpcUrl: "https://eth.llamarpc.com",
