@@ -29,7 +29,6 @@ the hat &ndash; is able to drop the targeted plan in `MCD_PAUSE`.
 
 ### 2. Enable permissionless dropping of a single or multiple plans 
 
-
 ```solidity
 /// @notice Permissionlessly drop anything that has been planned on the pause.
 drop(address _usr, bytes32 _tag, bytes memory _fax, uint256 _eta)
@@ -78,3 +77,13 @@ planned(bytes32 _id)(bool)
 ```
 
 Returns `true` if a plan has been scheduled for execution.
+
+## Audits
+
+Audit reports are hosted on the auditors' public portfolio pages:
+
+| Auditor | Report | Date |
+| --- | --- | --- |
+| ChainSecurity | [Protego Smart Contracts](https://www.chainsecurity.com/security-audit/makerdao-protego-smart-contracts/) | 2025-04-15 |
+
+ChainSecurity reports are cumulative: each portfolio page hosts the latest version of the report, which covers all previously reviewed versions.
